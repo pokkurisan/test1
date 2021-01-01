@@ -30,9 +30,9 @@
 
                         <div>
                             <ul class="js-drawer-list">
-                                <li>初級</li>
-                                <li>中級</li>
-                                <li>上級</li>
+                                <li><a href="#">初級</a></li>
+                                <li><a href="#">中級</a></li>
+                                <li><a href="#">上級</a></li>
                             </ul>
                         </div>
                     </li>
@@ -116,7 +116,7 @@
 
     <script type="text/javascript">
         $(function () {
-            $(".drawer").click(function () {
+            $(".drawer").hover(function () {
                 $(".js-drawer-list").slideToggle();
             });
         });
