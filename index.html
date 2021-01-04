@@ -78,17 +78,22 @@
 
             <div class="course-wrapper">
                 <div class="course-item">
-                    <img src="./img/web_first.png" alt="">
+                    <a href=""><img src="./img/web_first.png" alt=""></a>
                     <p>HTML / CSS / Bootstrap</p>
                 </div>
                 <div class="course-item">
-                    <img src="./img/web_second.png" alt="">
+                    <a href=""><img src="./img/web_second.png" alt=""></a>
                     <p>HTML / CSS / JavaScript / jQuery</p>
                 </div>
                 <div class="course-item">
-                    <img src="./img/web_third.png" alt="">
+                    <a href=""><img src="./img/web_third.png" alt=""></a>
                     <p>PHP / WordPress</p>
                 </div>
+            </div>
+
+            <div class="modal">
+                <div class="bigimg"><img src="" alt=""></div>
+                <p class="close-btn"><a href="">✖</a></p>
             </div>
 
         </div>
@@ -140,6 +145,22 @@
                 }, 500); //0.5秒かけてトップへ移動
                 return false;
             });
+
+            //モーダル（画像拡大）
+            $('.course-item a').click(function () {
+                var imgSrc = $(this).children().attr('src');
+                $('.bigimg').children().attr('src', imgSrc);
+                $('.modal').fadeIn();
+                $('body,html').css('overflow-y', 'hidden');
+                return false
+            });
+
+            $('.close-btn').click(function () {
+                $('.modal').fadeOut();
+                $('body,html').css('overflow-y', 'visible');
+                return false
+            });
+
         });
     </script>
 
